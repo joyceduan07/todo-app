@@ -1,0 +1,430 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 30px;
+	font-family: -apple-system
+	,BlinkMacSystemFont, Segoe
+	UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica
+	Neue,sans-serif;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+h1 {
+	font-size: 600%;
+	color: #3686C1;
+}
+
+#move-add-button {
+	margin-top: 100px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.control {
+	font-size: 18px;
+	position: relative;
+	display: block;
+	margin-bottom: 15px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.control__indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: #e6e6e6;
+}
+
+.control--radio .control__indicator {
+	border-radius: 50%;
+}
+
+/* Hover and focus states */
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+	background: #ccc;
+}
+
+/* Checked state */
+.control input:checked ~ .control__indicator {
+	background: #3686C1;
+}
+
+/* Hover state whilst checked */
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+	background: #0e647d;
+}
+
+/* Disabled state */
+.control input:disabled ~ .control__indicator {
+	pointer-events: none;
+	opacity: .6;
+	background: #e6e6e6;
+}
+
+/* Check mark */
+.control__indicator:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+
+/* Show check mark */
+.control input:checked ~ .control__indicator:after {
+	display: block;
+}
+
+/* Checkbox tick */
+.control--checkbox .control__indicator:after {
+	top: 4px;
+	left: 8px;
+	width: 3px;
+	height: 8px;
+	transform: rotate(45deg);
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+}
+
+/* Disabled tick colour */
+.control--checkbox input:disabled ~ .control__indicator:after {
+	border-color: #7b7b7b;
+}
+
+/* Radio button inner circle */
+.control--radio .control__indicator:after {
+	top: 7px;
+	left: 7px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+/* Disabled circle colour */
+.control--radio input:disabled ~ .control__indicator:after {
+	background: #7b7b7b;
+}
+
+.task-item {
+	display: flex;
+	flex-direction: row;
+	margin: 20px;
+}
+
+.task-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #3686C1;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+label {
+  display: block;
+  padding-right: 8px;
+}
+
+h2 {
+	color: #777777;
+	font-size: 300%;
+	text-align: center;
+}
+
+h3 {
+	color: #606060;
+}
+
+h4 {
+	color: #606060;
+}
+
+p {
+	font-size: x-small;
+	color: #606060;
+	margin-top: -12px;
+}
+
+.form-beginning {
+	margin-top: 5px;
+}
+
+#no-tasks {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.little-header {
+	margin-top: 70px;
+	text-align: center;
+	font-size: 250%;
+}
+
+
+#add-task {
+	margin-top: 20px;
+}
+
+.footer {
+    position: 'absolute';
+    height: 40;
+    left: 0;
+    top: WINDOW_HEIGHT - 40;
+    width: WINDOW_WIDTH;
+ }
+
+.navbar-default .navbar-nav>.active> a, 
+.navbar-default .navbar-nav>.active> a:hover {
+  background: #B0B0B0;
+}
+
+ul.nav.navbar-nav .dropdown.open .dropdown-toggle{
+  background-color: #B0B0B0;
+}
+
+.slogan {
+	position: relative;
+	top: -15px;
+}
+
+#nav-button {
+	padding-right: 10px;
+}
+
+li {
+	list-style-type: none;
+}
+
+.priority-options {
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	break-before: always;
+	margin-bottom: 5px;
+}
+
+.task-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.invalid-message {
+	text-align: center;
+	font-size: 90%;
+	color:red;
+	padding-top: 20px;
+}
+
+.valid {
+	color:green;
+}
+
+.invalid {
+	color:red;
+}
+
+.first-item {
+	padding-top: 20px;
+	margin-left: 20px;
+}
+
+.task-grid {
+	padding-top: 0px;
+	margin-bottom: 10px;
+	margin-right: 75px;
+}
+
+.signup-padding {
+	padding-top: 50px;
+}
+
+.navbar-default {
+	background-color: #CDCDCD;
+}
+
+.signup-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.home-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 120px;
+}
+
+.add-list-button {
+    background-color: #eee;
+    border: none;
+	border-radius: 3px;
+	width: 70px;
+	text-align: center;
+	display: block;
+	color: #777777;
+	padding: 7px 0;
+	margin: 10px auto;
+}
+
+.add-list-button:hover:enabled {
+	text-decoration: none;
+	color: #111;
+}
+
+.add-list-button:active {
+	transform: translateY(1px);
+}
+
+.add-list-button:disabled,{
+  background-color: #cccccc;
+}
+
+.button {
+	color: #e6e6e6;
+	background: #0C316D;
+	border: none;
+	font-size: 16px;
+	border-radius: 3px;
+	width: 200px;
+	text-align: center;
+	display: block;
+	padding: 7px 0;
+	margin: 10px auto;
+}
+
+.button:hover:enabled {
+	background:linear-gradient(#0C316D, #0C316D);
+	color: #fff;
+	text-decoration: none;
+}
+
+.button:active {
+	transform: translateY(1px);
+}
+
+.button:disabled,{
+  background-color: #cccccc;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.help-text {
+	position: relative;
+	top: -5px;
+}

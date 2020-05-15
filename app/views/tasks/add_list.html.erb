@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  	<%= javascript_pack_tag 'application' %>
+    <% if logged_in? %>
+    	<%= react_component("AddList", {username: current_user.name, user_id: current_user.id, list_count: current_user.lists.count}) %>
+    <% else %>
+ 		<%= react_component("Welcome") %>
+ 	<% end %>
+    <!-- if logged in, else we redirect!! for all pages logged in like sign up and login -->
+  </body>
+</html>

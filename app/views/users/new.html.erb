@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <%= javascript_pack_tag 'application' %>
+    <% if logged_in? %>
+	  <%= react_component("Tasks", {username: current_user.name, user_id: current_user.id, task_count: current_user.tasks.count, descriptions: current_user.tasks.collect(&:description), priorities: current_user.tasks.collect(&:priority), categories: current_user.tasks.collect(&:list), category: 'all', all_lists: current_user.lists.collect(&:title)}) %>
+	<% else %>
+	  <%= react_component("SignUp") %>
+	<% end %>
+  </body>
+</html>
